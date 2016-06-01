@@ -1,0 +1,6 @@
+{
+  "name": "Draggable-list.js",
+  "tagline": "Drag & drop items in a self-organizing list",
+  "body": "# draggable-list.js\r\nDrag &amp; drop items in a self-organizing list\r\n\r\n**Usage:**\r\n\r\nAdd the class \"draggable\" to your elements.\r\n\r\nOptional \"sticky\" class for a slight delay before the dragging starts.\r\n\r\nDrag area can be limited to certain boundaries by placing the draggables inside a drag_area -class container.\r\n\r\n\r\n**Dependencies:**\r\n\r\njQuery\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
