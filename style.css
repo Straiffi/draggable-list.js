@@ -1,0 +1,33 @@
+.draggable {
+	display: block;
+	border: 1px solid black;
+	padding: 20px;
+	max-width: 200px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	left: 0;
+	top: 0;
+	position: relative;
+}
+
+.draggable.snapping {
+	transition:  all 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+.drag_area {
+	border: 1px solid red;
+	height: 700px;
+	width: 700px;
+	margin: 50px;
+}
+
+.drag_target {
+	position:  absolute;
+	pointer-events:  none;
+	background: #DCF2FA;
+	border: 1px solid rgba(0,0,0,0.4);
+	opacity: 0;
+	z-index: -1;
+}
