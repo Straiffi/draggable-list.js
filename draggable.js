@@ -84,7 +84,7 @@ $(document).ready(function() {
 					overlapHandled = true;
 					$(item).css("opacity", 1);
 					draggingItem.setSnapTarget(this.dragTarget);
-					
+
 					if(realtimeArrange){
 						var arrangeNeeded = draggingItem.snapTarget !== null && !draggingItem.snapTarget.isEmpty();
 						draggingItem.simulateSnap();
@@ -224,9 +224,9 @@ function DragItem(elem, dragTarget, index) {
 		}, 300);
 	};
 
+	// Used for realtime arranging, sets a new dragtarget without actually moving to it.
 	DragItem.prototype.simulateSnap = function() {
 		if(this.snapTarget !== null) { 
-			//this.move(this.snapTarget.elem.offset().top, this.snapTarget.elem.offset().left);
 			this.dragTarget = this.snapTarget;
 			this.dragTarget.empty = false;
 		}
