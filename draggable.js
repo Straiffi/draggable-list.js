@@ -4,6 +4,8 @@ $(document).ready(function() {
 	var lastMouseY = 0;
 	var lastMouseX = 0;
 
+	var realtimeArrange = true;
+
 	var dragItems = [];
 	var dragTargets = [];
 	initList();
@@ -82,6 +84,14 @@ $(document).ready(function() {
 					overlapHandled = true;
 					$(item).css("opacity", 1);
 					draggingItem.setSnapTarget(this.dragTarget);
+					
+					if(realtimeArrange){
+						var arrangeNeeded = draggingItem.snapTarget !== null && !draggingItem.snapTarget.isEmpty();
+						draggingItem.simulateSnap();
+						if(arrangeNeeded) {
+							arrangeList();
+						}
+					}
 				} else{
 					$(item).css("opacity", 0.2);
 				}
@@ -126,7 +136,7 @@ $(document).ready(function() {
 						indexChanged = true;
 					}
 				}
-				if(indexChanged){
+				if(indexChanged) {
 					var target = $.grep(dragTargets, function(dt) { return dt.index === newIndex; })[0];
 					if(target !== undefined){
 						this.snapTarget = target;
@@ -212,6 +222,14 @@ function DragItem(elem, dragTarget, index) {
 		setTimeout(function(){
 			t.elem.removeClass("snapping");
 		}, 300);
+	};
+
+	DragItem.prototype.simulateSnap = function() {
+		if(this.snapTarget !== null) { 
+			//this.move(this.snapTarget.elem.offset().top, this.snapTarget.elem.offset().left);
+			this.dragTarget = this.snapTarget;
+			this.dragTarget.empty = false;
+		}
 	};
 
 	DragItem.prototype.reset = function() {
