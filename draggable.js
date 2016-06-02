@@ -69,7 +69,9 @@ $(document).ready(function() {
 
             // Find closest snap position.
             var overlapHandled = false;
-            draggingItem.snapTarget = null;
+            if(!realtimeArrange){
+            	draggingItem.snapTarget = null;
+            }
             $(dragItems).each(function() {
             	var item = this.dragTarget.elem;
             	var rect1 = draggingItem.elem[0].getBoundingClientRect();
