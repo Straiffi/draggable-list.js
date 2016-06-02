@@ -17,4 +17,4 @@ jQuery
 
 **See it in action**
 
-https://jsfiddle.net/fq2gnwd9/
+https://jsfiddle.net/fq2gnwd9/3/
