@@ -14,3 +14,7 @@ Drag area can be limited to certain boundaries by placing the draggables inside 
 
 jQuery
 
+
+**See it in action**
+
+https://jsfiddle.net/fq2gnwd9/
